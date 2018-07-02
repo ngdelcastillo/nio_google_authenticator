@@ -4,7 +4,7 @@ defmodule NioGoogleAuthenticator.Mixfile do
   def project do
     [app: :nio_google_authenticator,
      version: "2.1.2",
-     elixir: "~> 1.2",
+     elixir: "~> 1.6",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      description: description(),
