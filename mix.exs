@@ -2,14 +2,16 @@ defmodule NioGoogleAuthenticator.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :nio_google_authenticator,
-     version: "2.1.2",
-     elixir: "~> 1.6",
-     build_embedded: Mix.env == :prod,
-     start_permanent: Mix.env == :prod,
-     description: description(),
-     package: package(),
-     deps: deps()]
+    [
+      app: :nio_google_authenticator,
+      version: "2.1.2",
+      elixir: "~> 1.6",
+      build_embedded: Mix.env() == :prod,
+      start_permanent: Mix.env() == :prod,
+      description: description(),
+      package: package(),
+      deps: deps()
+    ]
   end
 
   def application do
@@ -18,7 +20,7 @@ defmodule NioGoogleAuthenticator.Mixfile do
 
   defp deps do
     [
-      {:ecto, "~> 2.0"},
+      {:ecto, "~> 3.1"},
       {:pot, "~> 0.9.3"},
       {:ex_doc, ">= 0.0.0", only: :dev}
     ]
@@ -34,11 +36,15 @@ defmodule NioGoogleAuthenticator.Mixfile do
   end
 
   defp package do
-    [# These are the default files included in the package
-     files: ["lib", "mix.exs", "README*", "LICENSE*"],
-     maintainers: ["Max Neuvians"],
-     licenses: ["MIT"],
-     links: %{"GitHub" => "https://github.com/maxneuvians/nio_google_authenticator",
-              "Docs" => "https://github.com/maxneuvians/nio_google_authenticator"}]
+    # These are the default files included in the package
+    [
+      files: ["lib", "mix.exs", "README*", "LICENSE*"],
+      maintainers: ["Max Neuvians"],
+      licenses: ["MIT"],
+      links: %{
+        "GitHub" => "https://github.com/maxneuvians/nio_google_authenticator",
+        "Docs" => "https://github.com/maxneuvians/nio_google_authenticator"
+      }
+    ]
   end
 end
